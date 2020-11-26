@@ -1,0 +1,284 @@
+{
+	"info": {
+		"_postman_id": "4e323cce-ae44-47c5-bc3a-7c26fdeb208c",
+		"name": "Count of Money",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "create a user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\" : \"testUsername\",\n    \"email\" : \"email@test.com\",\n    \"password\" : \"password1\",\n    \"role\" : \"user\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"email\" : \"email@test.com\",\n        \"password\" : \"password1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user information (by userID)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6eyJmYXZvcml0ZXMiOltdLCJfaWQiOiI1ZmJmYjAxZDdjMDFiNDJhYTAzYjIzM2UiLCJ1c2VybmFtZSI6InRlc3RVc2VybmFtZSIsImVtYWlsIjoiZW1haWxAdGVzdC5jb20iLCJyb2xlIjoidXNlciIsInBhc3N3b3JkIjoic2hhMSQzYzBkMzJjOSQxJDhjZjYwODU2MDkyYjJjNzE4ZWY5MmVjNWVlMjBjZWIwYTE2ZjA3OTEiLCJfX3YiOjB9LCJpYXQiOjE2MDYzOTkyMTN9.1XCyOAkejeojcInPrQAHQ3P7sM9qbX0o4ZetAbzpsls",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/:userID",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								":userID"
+							],
+							"variable": [
+								{
+									"key": "userID",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get User information (by JSON)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User information",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\" : \"testUsername\",\n    \"email\" : \"email@test.com\",\n    \"password\" : \"password1\",\n    \"role\" : \"user\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/:userID",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								":userID"
+							],
+							"variable": [
+								{
+									"key": "userID",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users/:userID",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								":userID"
+							],
+							"variable": [
+								{
+									"key": "userID",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Favorites Cryptos",
+			"item": [
+				{
+					"name": "Add Favorites cryptos",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6eyJmYXZvcml0ZXMiOltdLCJfaWQiOiI1ZmJmYjAxZDdjMDFiNDJhYTAzYjIzM2UiLCJ1c2VybmFtZSI6InRlc3RVc2VybmFtZSIsImVtYWlsIjoiZW1haWxAdGVzdC5jb20iLCJyb2xlIjoidXNlciIsInBhc3N3b3JkIjoic2hhMSQzYzBkMzJjOSQxJDhjZjYwODU2MDkyYjJjNzE4ZWY5MmVjNWVlMjBjZWIwYTE2ZjA3OTEiLCJfX3YiOjB9LCJpYXQiOjE2MDYzOTkyMTN9.1XCyOAkejeojcInPrQAHQ3P7sM9qbX0o4ZetAbzpsls",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"favorites\": \"test2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/favorites",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"favorites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Favorite Crypto",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6eyJmYXZvcml0ZXMiOltdLCJfaWQiOiI1ZmJmYjAxZDdjMDFiNDJhYTAzYjIzM2UiLCJ1c2VybmFtZSI6InRlc3RVc2VybmFtZSIsImVtYWlsIjoiZW1haWxAdGVzdC5jb20iLCJyb2xlIjoidXNlciIsInBhc3N3b3JkIjoic2hhMSQzYzBkMzJjOSQxJDhjZjYwODU2MDkyYjJjNzE4ZWY5MmVjNWVlMjBjZWIwYTE2ZjA3OTEiLCJfX3YiOjB9LCJpYXQiOjE2MDYzOTkyMTN9.1XCyOAkejeojcInPrQAHQ3P7sM9qbX0o4ZetAbzpsls",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"favorites\": \"test2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/favorites",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"favorites"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
