@@ -1,10 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const axios = require("axios");
-const mongoose = require('mongoose');
-import manageAppSchema from '../models/manageAppSchema.js';
+import manageApp from '../models/manageAppSchema.js';
 
-const manageApp = mongoose.model('manage_app', manageAppSchema);
+const verifyToken = require('../auth/verifyToken');
 
 function getCrypto(crypto, res) {
     axios.get("https://min-api.cryptocompare.com/data/pricemultifull?fsyms=" + crypto + "&tsyms=EUR")
@@ -17,7 +16,7 @@ function getCrypto(crypto, res) {
 }
 
 function updateCryptoInDb(params, res) {
-    manageApp.update({test: 'oui'}, params, function (err, manageApps) {
+    manageApp.update({_id: 1}, params, {upsert: true}, function (err, manageApps) {
         if (err) {
             res.send(err);
         } else {
@@ -31,23 +30,27 @@ router.get('/', function (req, res) {
         if (err) {
             res.send(err);
         } else {
+            console.log(manageApps)
             getCrypto(manageApps[0].crypto_length, res);
         }
     })
 });
 
-router.get('/length', function (req, res) {
-    //admin
-    manageApp.find({test: 'oui'}, function (err, manageApps) {
-        if (err) {
-            res.send(err);
-        } else {
-            res.send(manageApps[0].crypto_length);
-        }
-    })
+router.get('/length', verifyToken, function (req, res) {
+    if (req.user.role === 'admin') {
+        manageApp.find({_id: 1}, function (err, manageApps) {
+            if (err) {
+                res.send(err);
+            } else {
+                res.send(manageApps[0].crypto_length);
+            }
+        })
+    } else {
+        res.status(403).json({status: 403, message: "You are not admin"});
+    }
 });
 
-router.get('/:crypto', function (req, res) {
+router.get('/:crypto', verifyToken, function (req, res) {
     const crypto = req.params.crypto
     manageApp.find({crypto_length: crypto}, function (err, manageApps) {
         if (err) {
@@ -56,24 +59,13 @@ router.get('/:crypto', function (req, res) {
             if (manageApps.length) {
                 getCrypto(crypto, res)
             } else {
-                res.send("Crypto does not exist in our db")
+                res.status(404).json({status: 404, message: "Crypto does not exist in our db"});
             }
         }
     })
 })
 
-router.post('/', function (req, res) {
-    //admin
-    updateCryptoInDb({$push: req.body}, res);
-});
-
-router.delete('/', function (req, res) {
-    //admin
-    updateCryptoInDb({$pull: req.body}, res);
-});
-
-router.get('/:crypto/history/:period', function (req, res) {
-    //admin
+router.get('/:crypto/history/:period', verifyToken, function (req, res) {
     const crypto = req.params.crypto;
     const period = req.params.period;
     manageApp.find({crypto_length: crypto}, function (err, manageApps) {
@@ -89,9 +81,27 @@ router.get('/:crypto/history/:period', function (req, res) {
                         res.json(error);
                     })
             } else {
-                res.send("Crypto does not exist in our db")
+                res.status(404).json({status: 404, message: "Crypto does not exist in our db"});
             }
         }
     })
 });
+
+router.post('/', verifyToken, function (req, res) {
+    if (req.user.role === 'admin') {
+        updateCryptoInDb({$push: req.body}, res);
+    } else {
+        res.status(403).json({status: 403, message: "You are not admin"});
+    }
+});
+
+router.delete('/', verifyToken, function (req, res) {
+    if (req.user.role === 'admin') {
+        updateCryptoInDb({$pull: req.body}, res);
+    } else {
+        res.status(403).json({status: 403, message: "You are not admin"});
+    }
+});
+
+
 module.exports = router;
