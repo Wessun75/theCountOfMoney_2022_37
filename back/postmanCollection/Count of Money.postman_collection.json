@@ -1,284 +1,471 @@
 {
-	"info": {
-		"_postman_id": "4e323cce-ae44-47c5-bc3a-7c26fdeb208c",
-		"name": "Count of Money",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-	},
-	"item": [
+	"id": "68692e3f-d2c4-9e2a-5a6a-fab012db7978",
+	"name": "Count of Money",
+	"description": "",
+	"order": [],
+	"folders": [
 		{
-			"name": "User",
-			"item": [
-				{
-					"name": "create a user",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"username\" : \"testUsername\",\n    \"email\" : \"email@test.com\",\n    \"password\" : \"password1\",\n    \"role\" : \"user\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/users",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"users"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "user Login",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n        \"email\" : \"email@test.com\",\n        \"password\" : \"password1\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/users/login",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"users",
-								"login"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get user information (by userID)",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6eyJmYXZvcml0ZXMiOltdLCJfaWQiOiI1ZmJmYjAxZDdjMDFiNDJhYTAzYjIzM2UiLCJ1c2VybmFtZSI6InRlc3RVc2VybmFtZSIsImVtYWlsIjoiZW1haWxAdGVzdC5jb20iLCJyb2xlIjoidXNlciIsInBhc3N3b3JkIjoic2hhMSQzYzBkMzJjOSQxJDhjZjYwODU2MDkyYjJjNzE4ZWY5MmVjNWVlMjBjZWIwYTE2ZjA3OTEiLCJfX3YiOjB9LCJpYXQiOjE2MDYzOTkyMTN9.1XCyOAkejeojcInPrQAHQ3P7sM9qbX0o4ZetAbzpsls",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/users/:userID",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"users",
-								":userID"
-							],
-							"variable": [
-								{
-									"key": "userID",
-									"value": ""
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "get User information (by JSON)",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"email\":\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/users/",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"users",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update User information",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"username\" : \"testUsername\",\n    \"email\" : \"email@test.com\",\n    \"password\" : \"password1\",\n    \"role\" : \"user\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/users/:userID",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"users",
-								":userID"
-							],
-							"variable": [
-								{
-									"key": "userID",
-									"value": ""
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete a user",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3000/users/:userID",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"users",
-								":userID"
-							],
-							"variable": [
-								{
-									"key": "userID",
-									"value": ""
-								}
-							]
-						}
-					},
-					"response": []
-				}
+			"name": "Crypto",
+			"description": "",
+			"collectionId": "68692e3f-d2c4-9e2a-5a6a-fab012db7978",
+			"order": [
+				"1e66c927-110c-e5d3-fef9-c92f3066ae0e",
+				"16973858-d766-8550-3189-7fbc05681b55",
+				"67b1bf19-c084-0b22-8bc8-f50e46ec6f3b",
+				"7ebf917c-7348-e3fb-7d64-44af1c40d242",
+				"4affaf05-68bf-20a2-0d90-48b80503b3f5",
+				"d7168d2a-c4bd-0cab-ed0a-ced0463e1a2a",
+				"6d179834-7006-4f6b-5232-ac817f648424"
 			],
-			"protocolProfileBehavior": {}
+			"owner": 0,
+			"folders_order": [],
+			"id": "95a69020-edab-6db7-b7d4-fd1767404c59"
 		},
 		{
+			"id": "153ac428-9da2-1501-837f-bd0ccfcd5b91",
 			"name": "Favorites Cryptos",
-			"item": [
-				{
-					"name": "Add Favorites cryptos",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6eyJmYXZvcml0ZXMiOltdLCJfaWQiOiI1ZmJmYjAxZDdjMDFiNDJhYTAzYjIzM2UiLCJ1c2VybmFtZSI6InRlc3RVc2VybmFtZSIsImVtYWlsIjoiZW1haWxAdGVzdC5jb20iLCJyb2xlIjoidXNlciIsInBhc3N3b3JkIjoic2hhMSQzYzBkMzJjOSQxJDhjZjYwODU2MDkyYjJjNzE4ZWY5MmVjNWVlMjBjZWIwYTE2ZjA3OTEiLCJfX3YiOjB9LCJpYXQiOjE2MDYzOTkyMTN9.1XCyOAkejeojcInPrQAHQ3P7sM9qbX0o4ZetAbzpsls",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"favorites\": \"test2\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/favorites",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"favorites"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete Favorite Crypto",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6eyJmYXZvcml0ZXMiOltdLCJfaWQiOiI1ZmJmYjAxZDdjMDFiNDJhYTAzYjIzM2UiLCJ1c2VybmFtZSI6InRlc3RVc2VybmFtZSIsImVtYWlsIjoiZW1haWxAdGVzdC5jb20iLCJyb2xlIjoidXNlciIsInBhc3N3b3JkIjoic2hhMSQzYzBkMzJjOSQxJDhjZjYwODU2MDkyYjJjNzE4ZWY5MmVjNWVlMjBjZWIwYTE2ZjA3OTEiLCJfX3YiOjB9LCJpYXQiOjE2MDYzOTkyMTN9.1XCyOAkejeojcInPrQAHQ3P7sM9qbX0o4ZetAbzpsls",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"favorites\": \"test2\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/favorites",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"favorites"
-							]
-						}
-					},
-					"response": []
-				}
+			"description": "",
+			"order": [
+				"ff1ea00a-f6a0-6dce-3b77-a19a659935b2",
+				"98feadd4-451b-200d-976a-99c2e09ed1b7"
 			],
-			"protocolProfileBehavior": {}
+			"folders_order": [],
+			"owner": 0,
+			"collectionId": "68692e3f-d2c4-9e2a-5a6a-fab012db7978"
+		},
+		{
+			"id": "d0b5d0be-91d4-c754-e8b2-dac640d06d7f",
+			"name": "User",
+			"description": "",
+			"order": [
+				"dd981b83-f24f-ce0c-ca55-bd82e039b78c",
+				"72f60e08-f1e5-c28a-18cd-f2f44f0ba11d",
+				"67f49382-42b4-4651-9cf7-586d21114dd3",
+				"aad631f9-07f6-b834-a443-5cb800d7881d",
+				"ad1f71d3-e47d-f7d4-0dfc-83278248f9db",
+				"f72443fa-62a0-89f0-1c16-b4ea275d3ec5"
+			],
+			"folders_order": [],
+			"owner": 0,
+			"collectionId": "68692e3f-d2c4-9e2a-5a6a-fab012db7978"
 		}
 	],
-	"protocolProfileBehavior": {}
+	"folders_order": [
+		"d0b5d0be-91d4-c754-e8b2-dac640d06d7f",
+		"153ac428-9da2-1501-837f-bd0ccfcd5b91",
+		"95a69020-edab-6db7-b7d4-fd1767404c59"
+	],
+	"timestamp": 0,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "16973858-d766-8550-3189-7fbc05681b55",
+			"headers": "Content-Type: application/json\nAuthorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6eyJmYXZvcml0ZXMiOltdLCJfaWQiOiI1ZmMwZmI0ZDM0OGY1YzJlNThjNjA1YjYiLCJ1c2VybmFtZSI6InRlc3RVc2VybmFtZSIsImVtYWlsIjoiZW1haWxAdGVzdC5jb20iLCJyb2xlIjoiYWRtaW4iLCJwYXNzd29yZCI6InNoYTEkMTc4ZWM5MGMkMSQ5ZTRiZjdmNWU2NDYwM2MwOWNkNjYyOTkyM2MyZTBlYTU2Y2QzMDZkIiwiX192IjowfSwiaWF0IjoxNjA2NDg0NTcyfQ.AcTQcUWZ9zvBQxzOD54rhG6uazJt3_5tOntGX3c0Snc\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6eyJmYXZvcml0ZXMiOltdLCJfaWQiOiI1ZmMwZmI0ZDM0OGY1YzJlNThjNjA1YjYiLCJ1c2VybmFtZSI6InRlc3RVc2VybmFtZSIsImVtYWlsIjoiZW1haWxAdGVzdC5jb20iLCJyb2xlIjoiYWRtaW4iLCJwYXNzd29yZCI6InNoYTEkMTc4ZWM5MGMkMSQ5ZTRiZjdmNWU2NDYwM2MwOWNkNjYyOTkyM2MyZTBlYTU2Y2QzMDZkIiwiX192IjowfSwiaWF0IjoxNjA2NDg0NTcyfQ.AcTQcUWZ9zvBQxzOD54rhG6uazJt3_5tOntGX3c0Snc",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/cryptos",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1606487416023,
+			"name": "Delete crypto db",
+			"description": "",
+			"collectionId": "68692e3f-d2c4-9e2a-5a6a-fab012db7978",
+			"responses": [],
+			"rawModeData": "{\n\t\"crypto_length\": \"BTC\"\n}"
+		},
+		{
+			"id": "1e66c927-110c-e5d3-fef9-c92f3066ae0e",
+			"headers": "Content-Type: application/json\nAuthorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6eyJmYXZvcml0ZXMiOltdLCJfaWQiOiI1ZmMwZmI0ZDM0OGY1YzJlNThjNjA1YjYiLCJ1c2VybmFtZSI6InRlc3RVc2VybmFtZSIsImVtYWlsIjoiZW1haWxAdGVzdC5jb20iLCJyb2xlIjoiYWRtaW4iLCJwYXNzd29yZCI6InNoYTEkMTc4ZWM5MGMkMSQ5ZTRiZjdmNWU2NDYwM2MwOWNkNjYyOTkyM2MyZTBlYTU2Y2QzMDZkIiwiX192IjowfSwiaWF0IjoxNjA2NDg0NTcyfQ.AcTQcUWZ9zvBQxzOD54rhG6uazJt3_5tOntGX3c0Snc\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6eyJmYXZvcml0ZXMiOltdLCJfaWQiOiI1ZmMwZmI0ZDM0OGY1YzJlNThjNjA1YjYiLCJ1c2VybmFtZSI6InRlc3RVc2VybmFtZSIsImVtYWlsIjoiZW1haWxAdGVzdC5jb20iLCJyb2xlIjoiYWRtaW4iLCJwYXNzd29yZCI6InNoYTEkMTc4ZWM5MGMkMSQ5ZTRiZjdmNWU2NDYwM2MwOWNkNjYyOTkyM2MyZTBlYTU2Y2QzMDZkIiwiX192IjowfSwiaWF0IjoxNjA2NDg0NTcyfQ.AcTQcUWZ9zvBQxzOD54rhG6uazJt3_5tOntGX3c0Snc",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/cryptos",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1606484597523,
+			"name": "Add crypto in db",
+			"description": "",
+			"collectionId": "68692e3f-d2c4-9e2a-5a6a-fab012db7978",
+			"responses": [],
+			"rawModeData": "{\n\t\"crypto_length\": \"BTC\"\n}"
+		},
+		{
+			"id": "4affaf05-68bf-20a2-0d90-48b80503b3f5",
+			"headers": "Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6eyJmYXZvcml0ZXMiOltdLCJfaWQiOiI1ZmMwZmI0ZDM0OGY1YzJlNThjNjA1YjYiLCJ1c2VybmFtZSI6InRlc3RVc2VybmFtZSIsImVtYWlsIjoiZW1haWxAdGVzdC5jb20iLCJyb2xlIjoiYWRtaW4iLCJwYXNzd29yZCI6InNoYTEkMTc4ZWM5MGMkMSQ5ZTRiZjdmNWU2NDYwM2MwOWNkNjYyOTkyM2MyZTBlYTU2Y2QzMDZkIiwiX192IjowfSwiaWF0IjoxNjA2NDg0NTcyfQ.AcTQcUWZ9zvBQxzOD54rhG6uazJt3_5tOntGX3c0Snc\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6eyJmYXZvcml0ZXMiOltdLCJfaWQiOiI1ZmMwZmI0ZDM0OGY1YzJlNThjNjA1YjYiLCJ1c2VybmFtZSI6InRlc3RVc2VybmFtZSIsImVtYWlsIjoiZW1haWxAdGVzdC5jb20iLCJyb2xlIjoiYWRtaW4iLCJwYXNzd29yZCI6InNoYTEkMTc4ZWM5MGMkMSQ5ZTRiZjdmNWU2NDYwM2MwOWNkNjYyOTkyM2MyZTBlYTU2Y2QzMDZkIiwiX192IjowfSwiaWF0IjoxNjA2NDg0NTcyfQ.AcTQcUWZ9zvBQxzOD54rhG6uazJt3_5tOntGX3c0Snc",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/cryptos/BTC/history/histoday",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "68692e3f-d2c4-9e2a-5a6a-fab012db7978",
+			"data": null,
+			"dataMode": "params",
+			"name": "Get crypto period - Daily",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1606487166748,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "95a69020-edab-6db7-b7d4-fd1767404c59"
+		},
+		{
+			"id": "67b1bf19-c084-0b22-8bc8-f50e46ec6f3b",
+			"headers": "Content-Type: application/json\nAuthorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6eyJmYXZvcml0ZXMiOltdLCJfaWQiOiI1ZmMwZmI0ZDM0OGY1YzJlNThjNjA1YjYiLCJ1c2VybmFtZSI6InRlc3RVc2VybmFtZSIsImVtYWlsIjoiZW1haWxAdGVzdC5jb20iLCJyb2xlIjoiYWRtaW4iLCJwYXNzd29yZCI6InNoYTEkMTc4ZWM5MGMkMSQ5ZTRiZjdmNWU2NDYwM2MwOWNkNjYyOTkyM2MyZTBlYTU2Y2QzMDZkIiwiX192IjowfSwiaWF0IjoxNjA2NDg0NTcyfQ.AcTQcUWZ9zvBQxzOD54rhG6uazJt3_5tOntGX3c0Snc\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6eyJmYXZvcml0ZXMiOltdLCJfaWQiOiI1ZmMwZmI0ZDM0OGY1YzJlNThjNjA1YjYiLCJ1c2VybmFtZSI6InRlc3RVc2VybmFtZSIsImVtYWlsIjoiZW1haWxAdGVzdC5jb20iLCJyb2xlIjoiYWRtaW4iLCJwYXNzd29yZCI6InNoYTEkMTc4ZWM5MGMkMSQ5ZTRiZjdmNWU2NDYwM2MwOWNkNjYyOTkyM2MyZTBlYTU2Y2QzMDZkIiwiX192IjowfSwiaWF0IjoxNjA2NDg0NTcyfQ.AcTQcUWZ9zvBQxzOD54rhG6uazJt3_5tOntGX3c0Snc",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/cryptos/",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1606486845542,
+			"name": "Get all cryptos in db",
+			"description": "",
+			"collectionId": "68692e3f-d2c4-9e2a-5a6a-fab012db7978",
+			"responses": [],
+			"rawModeData": "{\n\t\"crypto_length\": \"ADA\"\n}"
+		},
+		{
+			"id": "67f49382-42b4-4651-9cf7-586d21114dd3",
+			"name": "Get user information (by userID)",
+			"description": "",
+			"collectionId": "68692e3f-d2c4-9e2a-5a6a-fab012db7978",
+			"method": "GET",
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6eyJmYXZvcml0ZXMiOltdLCJfaWQiOiI1ZmJmYjAxZDdjMDFiNDJhYTAzYjIzM2UiLCJ1c2VybmFtZSI6InRlc3RVc2VybmFtZSIsImVtYWlsIjoiZW1haWxAdGVzdC5jb20iLCJyb2xlIjoidXNlciIsInBhc3N3b3JkIjoic2hhMSQzYzBkMzJjOSQxJDhjZjYwODU2MDkyYjJjNzE4ZWY5MmVjNWVlMjBjZWIwYTE2ZjA3OTEiLCJfX3YiOjB9LCJpYXQiOjE2MDYzOTkyMTN9.1XCyOAkejeojcInPrQAHQ3P7sM9qbX0o4ZetAbzpsls",
+			"dataMode": "raw",
+			"data": [],
+			"rawModeData": "",
+			"pathVariables": {
+				"userID": ""
+			},
+			"url": "http://localhost:3000/users/:userID",
+			"responses": [],
+			"pathVariableData": [
+				{
+					"key": "userID",
+					"value": ""
+				}
+			],
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6eyJmYXZvcml0ZXMiOltdLCJfaWQiOiI1ZmJmYjAxZDdjMDFiNDJhYTAzYjIzM2UiLCJ1c2VybmFtZSI6InRlc3RVc2VybmFtZSIsImVtYWlsIjoiZW1haWxAdGVzdC5jb20iLCJyb2xlIjoidXNlciIsInBhc3N3b3JkIjoic2hhMSQzYzBkMzJjOSQxJDhjZjYwODU2MDkyYjJjNzE4ZWY5MmVjNWVlMjBjZWIwYTE2ZjA3OTEiLCJfX3YiOjB9LCJpYXQiOjE2MDYzOTkyMTN9.1XCyOAkejeojcInPrQAHQ3P7sM9qbX0o4ZetAbzpsls",
+					"type": "text"
+				}
+			],
+			"collection_id": "68692e3f-d2c4-9e2a-5a6a-fab012db7978",
+			"folder": "d0b5d0be-91d4-c754-e8b2-dac640d06d7f"
+		},
+		{
+			"id": "6d179834-7006-4f6b-5232-ac817f648424",
+			"headers": "Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6eyJmYXZvcml0ZXMiOltdLCJfaWQiOiI1ZmMwZmI0ZDM0OGY1YzJlNThjNjA1YjYiLCJ1c2VybmFtZSI6InRlc3RVc2VybmFtZSIsImVtYWlsIjoiZW1haWxAdGVzdC5jb20iLCJyb2xlIjoiYWRtaW4iLCJwYXNzd29yZCI6InNoYTEkMTc4ZWM5MGMkMSQ5ZTRiZjdmNWU2NDYwM2MwOWNkNjYyOTkyM2MyZTBlYTU2Y2QzMDZkIiwiX192IjowfSwiaWF0IjoxNjA2NDg0NTcyfQ.AcTQcUWZ9zvBQxzOD54rhG6uazJt3_5tOntGX3c0Snc\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6eyJmYXZvcml0ZXMiOltdLCJfaWQiOiI1ZmMwZmI0ZDM0OGY1YzJlNThjNjA1YjYiLCJ1c2VybmFtZSI6InRlc3RVc2VybmFtZSIsImVtYWlsIjoiZW1haWxAdGVzdC5jb20iLCJyb2xlIjoiYWRtaW4iLCJwYXNzd29yZCI6InNoYTEkMTc4ZWM5MGMkMSQ5ZTRiZjdmNWU2NDYwM2MwOWNkNjYyOTkyM2MyZTBlYTU2Y2QzMDZkIiwiX192IjowfSwiaWF0IjoxNjA2NDg0NTcyfQ.AcTQcUWZ9zvBQxzOD54rhG6uazJt3_5tOntGX3c0Snc",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/cryptos/BTC/history/histominute",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1606487295083,
+			"name": "Get crypto period - Minute",
+			"description": "",
+			"collectionId": "68692e3f-d2c4-9e2a-5a6a-fab012db7978",
+			"responses": []
+		},
+		{
+			"id": "72f60e08-f1e5-c28a-18cd-f2f44f0ba11d",
+			"name": "user Login",
+			"description": "",
+			"collectionId": "68692e3f-d2c4-9e2a-5a6a-fab012db7978",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "raw",
+			"data": [],
+			"rawModeData": "{\n        \"email\" : \"email@test.com\",\n        \"password\" : \"password1\"\n}",
+			"url": "http://localhost:3000/users/login",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "68692e3f-d2c4-9e2a-5a6a-fab012db7978",
+			"folder": "d0b5d0be-91d4-c754-e8b2-dac640d06d7f"
+		},
+		{
+			"id": "7ebf917c-7348-e3fb-7d64-44af1c40d242",
+			"headers": "Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6eyJmYXZvcml0ZXMiOltdLCJfaWQiOiI1ZmMwZmI0ZDM0OGY1YzJlNThjNjA1YjYiLCJ1c2VybmFtZSI6InRlc3RVc2VybmFtZSIsImVtYWlsIjoiZW1haWxAdGVzdC5jb20iLCJyb2xlIjoiYWRtaW4iLCJwYXNzd29yZCI6InNoYTEkMTc4ZWM5MGMkMSQ5ZTRiZjdmNWU2NDYwM2MwOWNkNjYyOTkyM2MyZTBlYTU2Y2QzMDZkIiwiX192IjowfSwiaWF0IjoxNjA2NDg0NTcyfQ.AcTQcUWZ9zvBQxzOD54rhG6uazJt3_5tOntGX3c0Snc\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6eyJmYXZvcml0ZXMiOltdLCJfaWQiOiI1ZmMwZmI0ZDM0OGY1YzJlNThjNjA1YjYiLCJ1c2VybmFtZSI6InRlc3RVc2VybmFtZSIsImVtYWlsIjoiZW1haWxAdGVzdC5jb20iLCJyb2xlIjoiYWRtaW4iLCJwYXNzd29yZCI6InNoYTEkMTc4ZWM5MGMkMSQ5ZTRiZjdmNWU2NDYwM2MwOWNkNjYyOTkyM2MyZTBlYTU2Y2QzMDZkIiwiX192IjowfSwiaWF0IjoxNjA2NDg0NTcyfQ.AcTQcUWZ9zvBQxzOD54rhG6uazJt3_5tOntGX3c0Snc",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/cryptos/length",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "68692e3f-d2c4-9e2a-5a6a-fab012db7978",
+			"data": null,
+			"dataMode": "params",
+			"name": "Get crypto available in db",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1606486879849,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "95a69020-edab-6db7-b7d4-fd1767404c59"
+		},
+		{
+			"id": "98feadd4-451b-200d-976a-99c2e09ed1b7",
+			"name": "Delete Favorite Crypto",
+			"description": "",
+			"collectionId": "68692e3f-d2c4-9e2a-5a6a-fab012db7978",
+			"method": "DELETE",
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6eyJmYXZvcml0ZXMiOltdLCJfaWQiOiI1ZmJmYjAxZDdjMDFiNDJhYTAzYjIzM2UiLCJ1c2VybmFtZSI6InRlc3RVc2VybmFtZSIsImVtYWlsIjoiZW1haWxAdGVzdC5jb20iLCJyb2xlIjoidXNlciIsInBhc3N3b3JkIjoic2hhMSQzYzBkMzJjOSQxJDhjZjYwODU2MDkyYjJjNzE4ZWY5MmVjNWVlMjBjZWIwYTE2ZjA3OTEiLCJfX3YiOjB9LCJpYXQiOjE2MDYzOTkyMTN9.1XCyOAkejeojcInPrQAHQ3P7sM9qbX0o4ZetAbzpsls",
+			"dataMode": "raw",
+			"data": [],
+			"rawModeData": "{\n    \"favorites\": \"test2\"\n}",
+			"url": "http://localhost:3000/favorites",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6eyJmYXZvcml0ZXMiOltdLCJfaWQiOiI1ZmJmYjAxZDdjMDFiNDJhYTAzYjIzM2UiLCJ1c2VybmFtZSI6InRlc3RVc2VybmFtZSIsImVtYWlsIjoiZW1haWxAdGVzdC5jb20iLCJyb2xlIjoidXNlciIsInBhc3N3b3JkIjoic2hhMSQzYzBkMzJjOSQxJDhjZjYwODU2MDkyYjJjNzE4ZWY5MmVjNWVlMjBjZWIwYTE2ZjA3OTEiLCJfX3YiOjB9LCJpYXQiOjE2MDYzOTkyMTN9.1XCyOAkejeojcInPrQAHQ3P7sM9qbX0o4ZetAbzpsls",
+					"type": "text"
+				}
+			],
+			"collection_id": "68692e3f-d2c4-9e2a-5a6a-fab012db7978",
+			"folder": "153ac428-9da2-1501-837f-bd0ccfcd5b91"
+		},
+		{
+			"id": "aad631f9-07f6-b834-a443-5cb800d7881d",
+			"name": "get User information (by JSON)",
+			"description": "",
+			"collectionId": "68692e3f-d2c4-9e2a-5a6a-fab012db7978",
+			"method": "GET",
+			"headers": "",
+			"dataMode": "raw",
+			"data": [],
+			"rawModeData": "{\n    \"email\":\n}",
+			"url": "http://localhost:3000/users/",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "68692e3f-d2c4-9e2a-5a6a-fab012db7978",
+			"folder": "d0b5d0be-91d4-c754-e8b2-dac640d06d7f"
+		},
+		{
+			"id": "ad1f71d3-e47d-f7d4-0dfc-83278248f9db",
+			"name": "Update User information",
+			"description": "",
+			"collectionId": "68692e3f-d2c4-9e2a-5a6a-fab012db7978",
+			"method": "PUT",
+			"headers": "",
+			"dataMode": "raw",
+			"data": [],
+			"rawModeData": "{\n    \"username\" : \"testUsername\",\n    \"email\" : \"email@test.com\",\n    \"password\" : \"password1\",\n    \"role\" : \"user\"\n}",
+			"pathVariables": {
+				"userID": ""
+			},
+			"url": "http://localhost:3000/users/:userID",
+			"responses": [],
+			"pathVariableData": [
+				{
+					"key": "userID",
+					"value": ""
+				}
+			],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "68692e3f-d2c4-9e2a-5a6a-fab012db7978",
+			"folder": "d0b5d0be-91d4-c754-e8b2-dac640d06d7f"
+		},
+		{
+			"id": "d7168d2a-c4bd-0cab-ed0a-ced0463e1a2a",
+			"headers": "Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6eyJmYXZvcml0ZXMiOltdLCJfaWQiOiI1ZmMwZmI0ZDM0OGY1YzJlNThjNjA1YjYiLCJ1c2VybmFtZSI6InRlc3RVc2VybmFtZSIsImVtYWlsIjoiZW1haWxAdGVzdC5jb20iLCJyb2xlIjoiYWRtaW4iLCJwYXNzd29yZCI6InNoYTEkMTc4ZWM5MGMkMSQ5ZTRiZjdmNWU2NDYwM2MwOWNkNjYyOTkyM2MyZTBlYTU2Y2QzMDZkIiwiX192IjowfSwiaWF0IjoxNjA2NDg0NTcyfQ.AcTQcUWZ9zvBQxzOD54rhG6uazJt3_5tOntGX3c0Snc\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6eyJmYXZvcml0ZXMiOltdLCJfaWQiOiI1ZmMwZmI0ZDM0OGY1YzJlNThjNjA1YjYiLCJ1c2VybmFtZSI6InRlc3RVc2VybmFtZSIsImVtYWlsIjoiZW1haWxAdGVzdC5jb20iLCJyb2xlIjoiYWRtaW4iLCJwYXNzd29yZCI6InNoYTEkMTc4ZWM5MGMkMSQ5ZTRiZjdmNWU2NDYwM2MwOWNkNjYyOTkyM2MyZTBlYTU2Y2QzMDZkIiwiX192IjowfSwiaWF0IjoxNjA2NDg0NTcyfQ.AcTQcUWZ9zvBQxzOD54rhG6uazJt3_5tOntGX3c0Snc",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/cryptos/BTC/history/histohour",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1606487293515,
+			"name": "Get crypto period - Hourly",
+			"description": "",
+			"collectionId": "68692e3f-d2c4-9e2a-5a6a-fab012db7978",
+			"responses": []
+		},
+		{
+			"id": "dd981b83-f24f-ce0c-ca55-bd82e039b78c",
+			"name": "create a user",
+			"description": "",
+			"collectionId": "68692e3f-d2c4-9e2a-5a6a-fab012db7978",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "raw",
+			"data": [],
+			"rawModeData": "{\n    \"username\" : \"testUsername\",\n    \"email\" : \"email@test.com\",\n    \"password\" : \"password1\",\n    \"role\" : \"user\"\n}",
+			"url": "http://localhost:3000/users",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "68692e3f-d2c4-9e2a-5a6a-fab012db7978",
+			"folder": "d0b5d0be-91d4-c754-e8b2-dac640d06d7f"
+		},
+		{
+			"id": "f72443fa-62a0-89f0-1c16-b4ea275d3ec5",
+			"name": "Delete a user",
+			"description": "",
+			"collectionId": "68692e3f-d2c4-9e2a-5a6a-fab012db7978",
+			"method": "DELETE",
+			"headers": "",
+			"data": [],
+			"rawModeData": "",
+			"pathVariables": {
+				"userID": ""
+			},
+			"url": "http://localhost:3000/users/:userID",
+			"responses": [],
+			"pathVariableData": [
+				{
+					"key": "userID",
+					"value": ""
+				}
+			],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "68692e3f-d2c4-9e2a-5a6a-fab012db7978",
+			"folder": "d0b5d0be-91d4-c754-e8b2-dac640d06d7f"
+		},
+		{
+			"id": "ff1ea00a-f6a0-6dce-3b77-a19a659935b2",
+			"name": "Add Favorites cryptos",
+			"description": "",
+			"collectionId": "68692e3f-d2c4-9e2a-5a6a-fab012db7978",
+			"method": "POST",
+			"headers": "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6eyJmYXZvcml0ZXMiOltdLCJfaWQiOiI1ZmJmYjAxZDdjMDFiNDJhYTAzYjIzM2UiLCJ1c2VybmFtZSI6InRlc3RVc2VybmFtZSIsImVtYWlsIjoiZW1haWxAdGVzdC5jb20iLCJyb2xlIjoidXNlciIsInBhc3N3b3JkIjoic2hhMSQzYzBkMzJjOSQxJDhjZjYwODU2MDkyYjJjNzE4ZWY5MmVjNWVlMjBjZWIwYTE2ZjA3OTEiLCJfX3YiOjB9LCJpYXQiOjE2MDYzOTkyMTN9.1XCyOAkejeojcInPrQAHQ3P7sM9qbX0o4ZetAbzpsls",
+			"dataMode": "raw",
+			"data": [],
+			"rawModeData": "{\n    \"favorites\": \"test2\"\n}",
+			"url": "http://localhost:3000/favorites",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6eyJmYXZvcml0ZXMiOltdLCJfaWQiOiI1ZmJmYjAxZDdjMDFiNDJhYTAzYjIzM2UiLCJ1c2VybmFtZSI6InRlc3RVc2VybmFtZSIsImVtYWlsIjoiZW1haWxAdGVzdC5jb20iLCJyb2xlIjoidXNlciIsInBhc3N3b3JkIjoic2hhMSQzYzBkMzJjOSQxJDhjZjYwODU2MDkyYjJjNzE4ZWY5MmVjNWVlMjBjZWIwYTE2ZjA3OTEiLCJfX3YiOjB9LCJpYXQiOjE2MDYzOTkyMTN9.1XCyOAkejeojcInPrQAHQ3P7sM9qbX0o4ZetAbzpsls",
+					"type": "text"
+				}
+			],
+			"collection_id": "68692e3f-d2c4-9e2a-5a6a-fab012db7978",
+			"folder": "153ac428-9da2-1501-837f-bd0ccfcd5b91"
+		}
+	]
 }

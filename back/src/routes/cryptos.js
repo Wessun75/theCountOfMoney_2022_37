@@ -26,12 +26,15 @@ function updateCryptoInDb(params, res) {
 }
 
 router.get('/', function (req, res) {
-    manageApp.find(function (err, manageApps) {
+    manageApp.find({_id: 1}, function (err, manageApps) {
         if (err) {
             res.send(err);
         } else {
-            console.log(manageApps)
-            getCrypto(manageApps[0].crypto_length, res);
+            if (manageApps[0].crypto_length.length) {
+                getCrypto(manageApps[0].crypto_length, res);
+            } else {
+                res.status(404).json({status: 404, message: "You must add at least one crypto in the db"});
+            }
         }
     })
 });
