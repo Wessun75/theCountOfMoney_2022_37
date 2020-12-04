@@ -13,6 +13,7 @@ const indexRouter = require('./src/routes/index');
 const usersRouter = require('./src/routes/users');
 const cryptoRouter = require('./src/routes/cryptos');
 const favRouter = require('./src/routes/favorites');
+const newsRouter = require('./src/routes/news');
 
 const app = express();
 app.use(bodyParser.json());
@@ -38,6 +39,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/favorites', favRouter);
 app.use('/cryptos', cryptoRouter);
+app.use('/news', newsRouter);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

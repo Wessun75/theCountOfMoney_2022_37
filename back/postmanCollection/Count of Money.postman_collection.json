@@ -15,7 +15,8 @@
 				"7ebf917c-7348-e3fb-7d64-44af1c40d242",
 				"4affaf05-68bf-20a2-0d90-48b80503b3f5",
 				"d7168d2a-c4bd-0cab-ed0a-ced0463e1a2a",
-				"6d179834-7006-4f6b-5232-ac817f648424"
+				"6d179834-7006-4f6b-5232-ac817f648424",
+				"e288fab8-9814-b76d-a999-b914eccd565a"
 			],
 			"owner": 0,
 			"folders_order": [],
@@ -77,6 +78,7 @@
 				}
 			],
 			"url": "http://localhost:3000/cryptos",
+			"folder": "95a69020-edab-6db7-b7d4-fd1767404c59",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -112,6 +114,7 @@
 				}
 			],
 			"url": "http://localhost:3000/cryptos",
+			"folder": "95a69020-edab-6db7-b7d4-fd1767404c59",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -178,6 +181,7 @@
 				}
 			],
 			"url": "http://localhost:3000/cryptos/",
+			"folder": "95a69020-edab-6db7-b7d4-fd1767404c59",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -239,6 +243,7 @@
 				}
 			],
 			"url": "http://localhost:3000/cryptos/BTC/history/histominute",
+			"folder": "95a69020-edab-6db7-b7d4-fd1767404c59",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -275,34 +280,33 @@
 		},
 		{
 			"id": "7ebf917c-7348-e3fb-7d64-44af1c40d242",
-			"headers": "Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6eyJmYXZvcml0ZXMiOltdLCJfaWQiOiI1ZmMwZmI0ZDM0OGY1YzJlNThjNjA1YjYiLCJ1c2VybmFtZSI6InRlc3RVc2VybmFtZSIsImVtYWlsIjoiZW1haWxAdGVzdC5jb20iLCJyb2xlIjoiYWRtaW4iLCJwYXNzd29yZCI6InNoYTEkMTc4ZWM5MGMkMSQ5ZTRiZjdmNWU2NDYwM2MwOWNkNjYyOTkyM2MyZTBlYTU2Y2QzMDZkIiwiX192IjowfSwiaWF0IjoxNjA2NDg0NTcyfQ.AcTQcUWZ9zvBQxzOD54rhG6uazJt3_5tOntGX3c0Snc\n",
+			"headers": "Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6eyJfaWQiOiI1ZmNhMDcxODU4ZmQwYjFmNDgxMjVhYTMiLCJ1c2VybmFtZSI6InRlc3RlVXNlcm5hbWUiLCJlbWFpbCI6ImVtYWlsZUB0ZXN0LmNvbSIsInJvbGUiOiJhZG1pbiIsInBhc3N3b3JkIjoic2hhMSQzNTJlOGMwMCQxJGY3M2E3ZTFhM2EzN2JjNGUzM2Q2M2ZiY2U1NTBiMGFjMGQwY2EyM2IiLCJfX3YiOjAsImZhdm9yaXRlcyI6W119LCJpYXQiOjE2MDcwNzYzNDN9.eBguUkZF4yiMMyS7bYAf_pnKdJNLhc7AFdyFPOkim0k\n",
 			"headerData": [
 				{
 					"key": "Authorization",
-					"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6eyJmYXZvcml0ZXMiOltdLCJfaWQiOiI1ZmMwZmI0ZDM0OGY1YzJlNThjNjA1YjYiLCJ1c2VybmFtZSI6InRlc3RVc2VybmFtZSIsImVtYWlsIjoiZW1haWxAdGVzdC5jb20iLCJyb2xlIjoiYWRtaW4iLCJwYXNzd29yZCI6InNoYTEkMTc4ZWM5MGMkMSQ5ZTRiZjdmNWU2NDYwM2MwOWNkNjYyOTkyM2MyZTBlYTU2Y2QzMDZkIiwiX192IjowfSwiaWF0IjoxNjA2NDg0NTcyfQ.AcTQcUWZ9zvBQxzOD54rhG6uazJt3_5tOntGX3c0Snc",
+					"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6eyJfaWQiOiI1ZmNhMDcxODU4ZmQwYjFmNDgxMjVhYTMiLCJ1c2VybmFtZSI6InRlc3RlVXNlcm5hbWUiLCJlbWFpbCI6ImVtYWlsZUB0ZXN0LmNvbSIsInJvbGUiOiJhZG1pbiIsInBhc3N3b3JkIjoic2hhMSQzNTJlOGMwMCQxJGY3M2E3ZTFhM2EzN2JjNGUzM2Q2M2ZiY2U1NTBiMGFjMGQwY2EyM2IiLCJfX3YiOjAsImZhdm9yaXRlcyI6W119LCJpYXQiOjE2MDcwNzYzNDN9.eBguUkZF4yiMMyS7bYAf_pnKdJNLhc7AFdyFPOkim0k",
 					"description": "",
 					"enabled": true
 				}
 			],
 			"url": "http://localhost:3000/cryptos/length",
+			"folder": "95a69020-edab-6db7-b7d4-fd1767404c59",
 			"queryParams": [],
+			"preRequestScript": null,
 			"pathVariables": {},
 			"pathVariableData": [],
-			"preRequestScript": null,
 			"method": "GET",
-			"collectionId": "68692e3f-d2c4-9e2a-5a6a-fab012db7978",
 			"data": null,
 			"dataMode": "params",
-			"name": "Get crypto available in db",
-			"description": "",
-			"descriptionFormat": "html",
-			"time": 1606486879849,
 			"version": 2,
-			"responses": [],
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"folder": "95a69020-edab-6db7-b7d4-fd1767404c59"
+			"time": 1607076420606,
+			"name": "Get crypto available in db",
+			"description": "",
+			"collectionId": "68692e3f-d2c4-9e2a-5a6a-fab012db7978",
+			"responses": []
 		},
 		{
 			"id": "98feadd4-451b-200d-976a-99c2e09ed1b7",
@@ -384,6 +388,7 @@
 				}
 			],
 			"url": "http://localhost:3000/cryptos/BTC/history/histohour",
+			"folder": "95a69020-edab-6db7-b7d4-fd1767404c59",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -417,6 +422,37 @@
 			"headerData": [],
 			"collection_id": "68692e3f-d2c4-9e2a-5a6a-fab012db7978",
 			"folder": "d0b5d0be-91d4-c754-e8b2-dac640d06d7f"
+		},
+		{
+			"id": "e288fab8-9814-b76d-a999-b914eccd565a",
+			"headers": "Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6eyJmYXZvcml0ZXMiOltdLCJfaWQiOiI1ZmMwZmI0ZDM0OGY1YzJlNThjNjA1YjYiLCJ1c2VybmFtZSI6InRlc3RVc2VybmFtZSIsImVtYWlsIjoiZW1haWxAdGVzdC5jb20iLCJyb2xlIjoiYWRtaW4iLCJwYXNzd29yZCI6InNoYTEkMTc4ZWM5MGMkMSQ5ZTRiZjdmNWU2NDYwM2MwOWNkNjYyOTkyM2MyZTBlYTU2Y2QzMDZkIiwiX192IjowfSwiaWF0IjoxNjA2NDg0NTcyfQ.AcTQcUWZ9zvBQxzOD54rhG6uazJt3_5tOntGX3c0Snc\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6eyJmYXZvcml0ZXMiOltdLCJfaWQiOiI1ZmMwZmI0ZDM0OGY1YzJlNThjNjA1YjYiLCJ1c2VybmFtZSI6InRlc3RVc2VybmFtZSIsImVtYWlsIjoiZW1haWxAdGVzdC5jb20iLCJyb2xlIjoiYWRtaW4iLCJwYXNzd29yZCI6InNoYTEkMTc4ZWM5MGMkMSQ5ZTRiZjdmNWU2NDYwM2MwOWNkNjYyOTkyM2MyZTBlYTU2Y2QzMDZkIiwiX192IjowfSwiaWF0IjoxNjA2NDg0NTcyfQ.AcTQcUWZ9zvBQxzOD54rhG6uazJt3_5tOntGX3c0Snc",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/cryptos/list",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "68692e3f-d2c4-9e2a-5a6a-fab012db7978",
+			"data": null,
+			"dataMode": "params",
+			"name": "Get coin list in api",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1607076467531,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "95a69020-edab-6db7-b7d4-fd1767404c59"
 		},
 		{
 			"id": "f72443fa-62a0-89f0-1c16-b4ea275d3ec5",

@@ -16,7 +16,7 @@ function getCrypto(crypto, res) {
 }
 
 function updateCryptoInDb(params, res) {
-    manageApp.update({_id: 1}, params, {upsert: true}, function (err, manageApps) {
+    manageApp.findByIdAndUpdate(1, params, {upsert: true}, function (err, manageApps) {
         if (err) {
             res.send(err);
         } else {
@@ -26,14 +26,18 @@ function updateCryptoInDb(params, res) {
 }
 
 router.get('/', function (req, res) {
-    manageApp.find({_id: 1}, function (err, manageApps) {
+    manageApp.findById(1, function (err, manageApps) {
         if (err) {
             res.send(err);
         } else {
-            if (manageApps[0].crypto_length.length) {
-                getCrypto(manageApps[0].crypto_length, res);
+            if (manageApps) {
+                if (manageApps.crypto_length.length) {
+                    getCrypto(manageApps.crypto_length, res);
+                } else {
+                    res.status(404).json({status: 404, message: "You must add at least one crypto in the db"});
+                }
             } else {
-                res.status(404).json({status: 404, message: "You must add at least one crypto in the db"});
+                res.status(404).json({status: 404, message: "Your db is empty"})
             }
         }
     })
@@ -41,11 +45,15 @@ router.get('/', function (req, res) {
 
 router.get('/length', verifyToken, function (req, res) {
     if (req.user.role === 'admin') {
-        manageApp.find({_id: 1}, function (err, manageApps) {
+        manageApp.findById(1, function (err, manageApps) {
             if (err) {
                 res.send(err);
             } else {
-                res.send(manageApps[0].crypto_length);
+                if (manageApps) {
+                    res.send(manageApps.crypto_length);
+                } else {
+                    res.status(404).json({status: 404, message: "Your db is empty"})
+                }
             }
         })
     } else {
@@ -68,15 +76,31 @@ router.get('/:crypto', verifyToken, function (req, res) {
     })
 })
 
+
+router.get('/list', verifyToken, function (req, res) {
+    if (req.user.role === 'admin') {
+        axios.get("https://min-api.cryptocompare.com/data/blockchain/list?api_key=ebf13d6fe001b0bc3c7dacef525aa62d2bd07cfeac0a1b4073dac7d6b270e60d")
+            .then(function (response) {
+                res.json(response.data)
+            })
+            .catch(function (error) {
+                res.json(error);
+            })
+    } else {
+        res.status(403).json({status: 403, message: "You are not admin"});
+    }
+})
+
 router.get('/:crypto/history/:period', verifyToken, function (req, res) {
     const crypto = req.params.crypto;
     const period = req.params.period;
+    const limit = 'histohour' === period ? "limit=48" : "limit=60";
     manageApp.find({crypto_length: crypto}, function (err, manageApps) {
         if (err) {
             res.send(err);
         } else {
             if (manageApps.length) {
-                axios.get("https://min-api.cryptocompare.com/data/v2/" + period + "?fsym=" + crypto + "&tsym=EUR")
+                axios.get("https://min-api.cryptocompare.com/data/v2/" + period + "?fsym=" + crypto + "&tsym=EUR&" + limit)
                     .then(function (response) {
                         res.json(response.data)
                     })
@@ -105,6 +129,5 @@ router.delete('/', verifyToken, function (req, res) {
         res.status(403).json({status: 403, message: "You are not admin"});
     }
 });
-
 
 module.exports = router;

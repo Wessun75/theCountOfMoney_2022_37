@@ -10,10 +10,9 @@ var generateToken = require('../auth/generateToken');
 
 router.get('/', verifyToken, async(req, res) => {
     try {
-        var email = req.query.email;
-        var username = req.query.username;
+        var email = req.body.email;
        
-        const user = await User.findOne( {email: email, username:username});
+        const user = await User.findOne( {email: email});
         res.json({status : 200, message : "success", user: user});
     }
     catch(err) {
@@ -47,7 +46,7 @@ router.post('/login', async (req, res) => {
             res.status(401).json({status : 401, message: "can't connect to this account"});
         else {
             const token = await generateToken(findUser);
-            res.status(200).json({status : 200, message : "success", token : token})
+            res.status(200).json({status : 200, message : "success", user: findUser, token : token})
         }
     } catch(err) {
         res.status(400).json({status : 400, message: "can't connect to this account 3"});
