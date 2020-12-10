@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const axios = require("axios");
 import manageApp from '../models/manageAppSchema.js';
+const User = require('../models/user');
 
 const verifyToken = require('../auth/verifyToken');
 
@@ -44,7 +45,6 @@ router.get('/', function (req, res) {
 });
 
 router.get('/length', verifyToken, function (req, res) {
-    if (req.user.role === 'admin') {
         manageApp.findById(1, function (err, manageApps) {
             if (err) {
                 res.send(err);
@@ -55,10 +55,7 @@ router.get('/length', verifyToken, function (req, res) {
                     res.status(404).json({status: 404, message: "Your db is empty"})
                 }
             }
-        })
-    } else {
-        res.status(403).json({status: 403, message: "You are not admin"});
-    }
+        });
 });
 
 router.get('/:crypto', verifyToken, function (req, res) {

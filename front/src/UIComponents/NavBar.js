@@ -13,7 +13,12 @@ import FormGroup from '@material-ui/core/FormGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import CryptoLogo from "../Assets/Animations/Logo/CryptoLogo";
-import Link from "@material-ui/core/Link"
+import Link from "@material-ui/core/Link";
+import {UserStore} from "../Stores/UserStore";
+import LoginModal from "./Users/LoginModal/LoginModal";
+import LoginModalForNav from "./Users/LoginModal/LoginModalForNav";
+import {Logout} from "../Repositories/UserRepository";
+import {Route} from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -32,6 +37,7 @@ export default function NavBar() {
     const [auth, setAuth] = React.useState(true);
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
+    const userStore = UserStore.useState();
 
     const handleChange = (event) => {
         setAuth(event.target.checked);
@@ -45,21 +51,20 @@ export default function NavBar() {
         setAnchorEl(null);
     };
 
+    const logout = () => {
+      Logout();
+      handleClose();
+    };
+
     return (
         <div className={classes.root}>
-            <FormGroup>
-                <FormControlLabel
-                    control={<Switch checked={auth} onChange={handleChange} aria-label="login switch" />}
-                    label={auth ? 'Logout' : 'Login'}
-                />
-            </FormGroup>
             <AppBar position="static">
                 <Toolbar>
                     <CryptoLogo/>
                     <Typography variant="h6" className={classes.title}>
                         <Link href={"/"} color={"inherit"}>Count of Money</Link>
                     </Typography>
-                    {auth ? (
+                    {userStore.token ? (
                         <div>
                             <IconButton
                                 aria-label="account of current user"
@@ -85,11 +90,7 @@ export default function NavBar() {
                                 open={open}
                                 onClose={handleClose}
                             >
-                                <MenuItem onClick={handleClose}>
-                                    Settings&nbsp;
-                                    <SettingsIcon/>
-                                </MenuItem>
-                                <MenuItem onClick={handleClose}>
+                                <MenuItem onClick={logout}>
                                     Logout&nbsp;
                                     <ExitToAppIcon/>
                                 </MenuItem>
@@ -97,7 +98,7 @@ export default function NavBar() {
                         </div>
                     ) : (
                         <Typography>
-                            <p>Login/Register</p>
+                            <LoginModalForNav/>
                         </Typography>
                     )}
                 </Toolbar>

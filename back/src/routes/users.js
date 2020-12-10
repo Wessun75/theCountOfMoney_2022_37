@@ -11,7 +11,7 @@ var generateToken = require('../auth/generateToken');
 router.get('/', verifyToken, async(req, res) => {
     try {
         var email = req.body.email;
-       
+        if (email === undefined) { res.json({status : 400, message: "No user found"});}
         const user = await User.findOne( {email: email});
         res.json({status : 200, message : "success", user: user});
     }

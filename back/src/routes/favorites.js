@@ -29,4 +29,10 @@ router.delete('/', verifyToken, async(req, res) => {
     res.json(updateProfile);
 });
 
+router.delete('/deletecrypto', verifyToken, async(req, res) => {
+    const updateProfile = await User.deleteMany(
+        {"favorites": req.body.favorites},
+    );
+    res.json(updateProfile);
+});
 module.exports = router;

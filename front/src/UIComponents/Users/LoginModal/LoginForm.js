@@ -8,6 +8,8 @@ import GmailIcon from '@material-ui/icons/Mail'
 import DialogActions from '@material-ui/core/DialogActions';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import {Login} from "../../../Repositories/UserRepository";
+import {UserStore} from "../../../Stores/UserStore";
 
 const LoginForm = (props) => {
     const [logMail, setLogMail] = useState("");
@@ -18,6 +20,8 @@ const LoginForm = (props) => {
 
     const [errorLogPasswordAlert,setErrorLogPasswordAlert] = useState("");
     const [errorLogPasswordForm,setErrorLogPasswordForm] = useState(false);
+
+    const userStore = UserStore.useState();
 
     const handleChangeLogMail = event => 
     {
@@ -39,6 +43,14 @@ const LoginForm = (props) => {
 
         setErrorLogMailAlert("Unknown email")
         setErrorLogPasswordAlert("Wrong password")
+    }
+
+    const login = async () => {
+        const res = await Login(logMail, logPassword);
+
+        if (res == true) {
+            props.close();
+        }
     }
 
     const logoStyle = makeStyles({
@@ -71,7 +83,7 @@ const LoginForm = (props) => {
                     <Button onClick={props.close} color="primary">
                         Cancel
                     </Button>
-                    <Button onClick={fakeLogin} color="primary">
+                    <Button onClick={login} color="primary">
                         Login
                     </Button>
                     <RegisterModal close = {props.close} />
