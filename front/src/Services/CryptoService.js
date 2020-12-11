@@ -18,7 +18,7 @@ export async function GetCrypto(crypto, time, accessToken)
     return null;
 }
 
-export async function GetAvailableCryptos(accessToken)
+export async function GetAvailableCryptosName(accessToken)
 {
     const config = {
         headers: { Authorization: `Bearer ${accessToken}` }
@@ -29,6 +29,16 @@ export async function GetAvailableCryptos(accessToken)
         return res.data;
     } catch {
         return null;
+    }
+}
+
+export async function GetAvailableCryptos()
+{
+    try {
+        let res = await axios.get(Config.API_URL + "/cryptos");
+        return res.data.RAW;
+    } catch {
+        return false;
     }
 }
 
@@ -101,5 +111,28 @@ export async function DeleteCrypto(name, accessToken)
         return true;
     } catch {
         return null;
+    }
+}
+
+export async function GetTrendingNews()
+{
+    try {
+        let res = await axios.get(Config.API_URL + "/news/trending");
+        return res.data
+    } catch {
+        return false
+    }
+}
+
+export async function GetUserNews(accessToken)
+{
+    const config = {
+        headers: { Authorization: `Bearer ${accessToken}` },
+    };
+    try {
+        let res = await axios.get(Config.API_URL + "/news/forMe", config);
+        return res.data
+    } catch {
+        return false
     }
 }

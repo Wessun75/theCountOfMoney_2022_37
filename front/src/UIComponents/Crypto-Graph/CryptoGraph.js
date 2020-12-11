@@ -65,7 +65,7 @@ export const CryptoGraph = (props) => {
             <Container maxWidth="xs">
                 <Box>
                     {finalData ?
-                        <div>
+                        <div style={{ float:'left'}}>
                             <Chart
                                 options={options}
                                 series={finalData}

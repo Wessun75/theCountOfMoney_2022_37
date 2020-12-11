@@ -9,7 +9,7 @@ const User = require('../models/user');
 var verifyToken = require('../auth/verifyToken')
 var generateToken = require('../auth/generateToken');
 
-const NewsApiKey = "3f1b41a21f12460b9bdd5759fdd08dd0";
+const NewsApiKey = "277675aa293d4b4382458b4aafafdc3f";
 var page = 1;
 
 
@@ -23,9 +23,9 @@ router.get('/trending', async(req, res) => {
     today = yyyy + '-' + mm + '-' + dd;
 
     try {
-        axios.get("http://newsapi.org/v2/everything?q=crypto&from="+ today+ "2020-10-27&sortBy=publishedAt&apiKey=" + NewsApiKey)
+        axios.get("http://newsapi.org/v2/everything?language=en&q=crypto&from="+ today+ "2020-10-27&sortBy=publishedAt&apiKey=" + NewsApiKey)
         .then(function (response) {
-            res.json(response.data)
+            res.json(response.data.articles)
         })
         .catch(function (error) {
             res.json(error);
@@ -51,7 +51,7 @@ router.get('/forMe',verifyToken, async(req, res) => {
         var result = [];
 
         for (let item of fav) {
-            await axios.get("https://newsapi.org/v2/everything?q="  + item + "&sortBy=publishedAt&apiKey=" + NewsApiKey + "&pageSize=5&page=" + page)
+            await axios.get("https://newsapi.org/v2/everything?language=en&q="  + item + "&sortBy=publishedAt&apiKey=" + NewsApiKey + "&pageSize=5&page=" + page)
             .then(response => {
                 for (let articles of response.data.articles) {
                     result.push(articles);

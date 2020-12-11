@@ -8,6 +8,7 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
+import {Link} from "react-router-dom";
 
 const imageLinksStyle = makeStyles({
     root: {
@@ -27,27 +28,29 @@ const imageLinksBox = makeStyles({
     },
 });
 
-const NewsImageLinks = () => {
+const NewsImageLinks = (props) => {
         const classesA = imageLinksStyle();
         const classesB = imageLinksBox();
 
         const[imageRef,setImageRef] = useState([
-            {id: 1, title: 'How to invest ?', link:'',image: img},
-            {id: 2, title: "What's the Etherium ?", link:'',image: imgB},
-            {id: 3, title: 'Tout savoir sur le Litecoin !', link:'',image: imgC},
+            {id: 1, title: props.first.title, link: props.first.url, image: props.first.urlToImage},
+            {id: 2, title: props.second.title, link: props.second.url, image: props.second.urlToImage},
+            {id: 3, title: props.third.title, link: props.third.url, image: props.third.urlToImage},
         ]);
 
     const list = imageRef.map(function(imageref){
         return(
             <Card className={classesB.root}>
-                <CardActionArea>
-                    <CardMedia className={classesA.media} image= {imageref.image}/>
-                    <CardContent>
-                        <Typography align= 'left' variant="body2" color="textSecondary" component="p">
-                            {imageref.title}
-                        </Typography>
-                    </CardContent>
-                </CardActionArea>
+                <a rel="noopener noreferrer" href={imageref.link} target="_blank">
+                        <CardActionArea>
+                            <CardMedia className={classesA.media} image= {imageref.image}/>
+                            <CardContent>
+                                <Typography align= 'left' variant="body2" color="textSecondary" component="p">
+                                    {imageref.title}
+                                </Typography>
+                            </CardContent>
+                        </CardActionArea>
+                </a>
             </Card>
         )
     })
